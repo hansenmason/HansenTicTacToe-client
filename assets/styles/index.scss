@@ -1,1 +1,20 @@
 @import '~bootstrap/scss/bootstrap';
+
+h1 {
+  text-align: center;
+  border: 2px solid black;
+}
+
+.box {
+  align-items: center;
+  background-color: aqua;
+  border: 1px solid #ffffff;
+  color: black;
+  display: flex;
+  height: 200px;
+  justify-content: center;
+}
+
+.container {
+  margin-top: 150px;
+}
