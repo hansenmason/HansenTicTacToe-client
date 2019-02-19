@@ -33,13 +33,13 @@ const failure = () => {
   $('form').trigger('reset')
 }
 
-// const newGameSuccess = () => {
-//   $('#user-message').text('New Game Successful!')
-// }
+const newGameSuccess = () => {
+  $('#user-message').text('New Game Successful!')
+}
 //
-// const newGameFailure = () => {
-//   $('#user-message').text('Error initiating New Game')
-// }
+const newGameFailure = () => {
+  $('#user-message').text('Error initiating New Game')
+}
 
 module.exports = {
   signUpSuccess,
@@ -48,7 +48,7 @@ module.exports = {
   signInFailure,
   signOutSuccess,
   signOutFailure,
-  failure
-  // newGameSuccess,
-  // newGameFailure
+  failure,
+  newGameSuccess,
+  newGameFailure
 }
