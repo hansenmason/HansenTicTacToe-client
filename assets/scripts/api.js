@@ -18,6 +18,17 @@ const signIn = (formData) => {
   })
 }
 
+const changePassword = (formData) => {
+  return $.ajax({
+    url: config.apiUrl + '/change-password',
+    method: 'PATCH',
+    headers: {
+      Authorization: 'Token token=' + store.user.token
+    },
+    data: formData
+  })
+}
+
 const signOut = () => {
   return $.ajax({
     url: config.apiUrl + '/sign-out',
@@ -28,17 +39,53 @@ const signOut = () => {
   })
 }
 
-// const newGame = (formData) => {
-//   return $.ajax({
-//     url: config.apiURL + '/games',
-//     method: 'POST',
-//     data: formData
-//   })
-// }
+const newGame = () => {
+  return $.ajax({
+    url: config.apiUrl + '/games',
+    method: 'POST',
+    headers: {
+      Authorization: 'Token token=' + store.user.token
+    },
+    data: {}
+  })
+}
+
+const updateGame = (num, val, boolean) => {
+  console.log(store)
+  return $.ajax({
+    url: config.apiUrl + '/games/' + store.gameId,
+    method: 'PATCH',
+    headers: {
+      Authorization: 'Token token=' + store.user.token
+    },
+    data: {
+      'game': {
+        'cell': {
+          'index': num,
+          'value': val
+        },
+        'over': boolean
+      }
+    }
+  })
+}
+
+const getGames = () => {
+  return $.ajax({
+    url: config.apiUrl + '/games',
+    method: 'GET',
+    headers: {
+      Authorization: 'Token token=' + store.user.token
+    }
+  })
+}
 
 module.exports = {
   signUp,
   signIn,
-  signOut
-  // newGame
+  changePassword,
+  signOut,
+  newGame,
+  updateGame,
+  getGames
 }
