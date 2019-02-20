@@ -112,12 +112,14 @@ function checkWin (num, val) {
         $('.winner').show()
         $('.user').hide()
         playing = false
+        break
       } else if (ticArray[gameboard.threeInARow[i][0]] + ticArray[gameboard.threeInARow[i][1]] + ticArray[gameboard.threeInARow[i][2]] === 'OOO') {
         api.updateGame(num, val, true)
         $('.winner').html('User Two Wins!')
         $('.winner').show()
         $('.user').hide()
         playing = false
+        break
       } else if (Object.keys(ticArray).length === 9) {
         api.updateGame(num, val, true)
         $('.winner').html('It\'s a Draw!')
