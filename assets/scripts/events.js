@@ -8,6 +8,9 @@ const gameboard = require('./gameboard.js')
 let activePlayer
 let ticArray = []
 let playing
+let counterOne
+let counterTwo
+
 function begin () {
   playing = true
   ticArray = []
@@ -46,6 +49,8 @@ const onSignIn = (event) => {
     .then(ui.signInSuccess)
     .catch(ui.signInFailure)
   activePlayer = 1
+  counterOne = 0
+  counterTwo = 0
 }
 
 const onChangePassword = (event) => {
@@ -81,6 +86,8 @@ const onNewGame = () => {
   $('#7').html('Click Me!')
   $('#8').html('Click Me!')
   begin()
+  $('#userOne').html(store.user.email + ' ' + counterOne + ' wins')
+  $('#userTwo').html('User Two ' + counterTwo + ' wins')
 }
 
 const onGetGames = () => {
@@ -112,6 +119,7 @@ function checkWin (num, val) {
         $('.winner').show()
         $('.user').hide()
         playing = false
+        counterOne++
         break
       } else if (ticArray[gameboard.threeInARow[i][0]] + ticArray[gameboard.threeInARow[i][1]] + ticArray[gameboard.threeInARow[i][2]] === 'OOO') {
         api.updateGame(num, val, true)
@@ -119,6 +127,7 @@ function checkWin (num, val) {
         $('.winner').show()
         $('.user').hide()
         playing = false
+        counterTwo++
         break
       } else if (Object.keys(ticArray).length === 9) {
         api.updateGame(num, val, true)
