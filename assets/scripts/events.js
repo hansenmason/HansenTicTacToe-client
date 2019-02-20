@@ -85,6 +85,7 @@ const onNewGame = () => {
 
 const onGetGames = () => {
   event.preventDefault()
+  playing = false
   api.getGames()
     .then(ui.getGamesSuccess)
     .catch(ui.failure)
@@ -103,25 +104,27 @@ function nextPlayer () {
 }
 
 function checkWin (num, val) {
-  for (let i = 1; i <= Object.keys(gameboard.threeInARow).length; i++) {
-    if (ticArray[gameboard.threeInARow[i][0]] + ticArray[gameboard.threeInARow[i][1]] + ticArray[gameboard.threeInARow[i][2]] === 'XXX') {
-      api.updateGame(num, val + 'Wins', true)
-      $('.winner').html(store.user.email + ' Wins!')
-      $('.winner').show()
-      $('.user').hide()
-      playing = false
-    } else if (ticArray[gameboard.threeInARow[i][0]] + ticArray[gameboard.threeInARow[i][1]] + ticArray[gameboard.threeInARow[i][2]] === 'OOO') {
-      api.updateGame(num, val, true)
-      $('.winner').html('User Two Wins!')
-      $('.winner').show()
-      $('.user').hide()
-      playing = false
-    } else if (Object.keys(ticArray).length === 9) {
-      api.updateGame(num, val, true)
-      $('.winner').html('It\'s a Draw!')
-      $('.winner').show()
-      $('.user').hide()
-      playing = false
+  if (playing) {
+    for (let i = 1; i <= Object.keys(gameboard.threeInARow).length; i++) {
+      if (ticArray[gameboard.threeInARow[i][0]] + ticArray[gameboard.threeInARow[i][1]] + ticArray[gameboard.threeInARow[i][2]] === 'XXX') {
+        api.updateGame(num, val + 'Wins', true)
+        $('.winner').html(store.user.email + ' Wins!')
+        $('.winner').show()
+        $('.user').hide()
+        playing = false
+      } else if (ticArray[gameboard.threeInARow[i][0]] + ticArray[gameboard.threeInARow[i][1]] + ticArray[gameboard.threeInARow[i][2]] === 'OOO') {
+        api.updateGame(num, val, true)
+        $('.winner').html('User Two Wins!')
+        $('.winner').show()
+        $('.user').hide()
+        playing = false
+      } else if (Object.keys(ticArray).length === 9) {
+        api.updateGame(num, val, true)
+        $('.winner').html('It\'s a Draw!')
+        $('.winner').show()
+        $('.user').hide()
+        playing = false
+      }
     }
   }
 }
