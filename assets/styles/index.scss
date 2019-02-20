@@ -22,7 +22,7 @@ h1 {
 .user {
   display: flex;
   justify-content: space-around;
-  border: 2px solid black
+  border: 2px solid black;
 }
 
 .row {
@@ -31,4 +31,9 @@ h1 {
 
 .winner {
   padding: 15px;
+  color: #0000ff;
+}
+
+p {
+  color: #0000ff;
 }

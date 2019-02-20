@@ -51,7 +51,6 @@ const newGame = () => {
 }
 
 const updateGame = (num, val, boolean) => {
-  console.log(store)
   return $.ajax({
     url: config.apiUrl + '/games/' + store.gameId,
     method: 'PATCH',
