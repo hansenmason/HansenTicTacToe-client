@@ -23,3 +23,5 @@ My user stories from the beginning were as follows:
 'As a user, I want to see my total wins count.'
 
 
+
+Link to wireframe: https://imgur.com/a/AHSMWYH
