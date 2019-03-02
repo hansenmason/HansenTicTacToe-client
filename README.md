@@ -13,12 +13,12 @@ My user stories from the beginning were as follows:
 
 	'As a first time user, I want to be able to have my own unique log in'
 	'As a logged in user, I want to choose if I'm X or O.'
-	'As a logged in user, I want to be able to choose a new game whenever I please.'; 
-	'As a logged in user, I want to be able to sign out and have my email and password cleared.'; 
-	'As a logged in user, I want to undo a move.'; 
-	'As a logged in user, I want to be able to see when a winner is declared.'; 
-	'As a user, I only want to see the board when I'm logged into the game.'; 
-	'As a logged in user, I want to see my total wins count.'; 
+	'As a logged in user, I want to be able to choose a new game whenever I please.'
+	'As a logged in user, I want to be able to sign out and have my email and password cleared.' 
+	'As a logged in user, I want to undo a move.'
+	'As a logged in user, I want to be able to see when a winner is declared.'
+	'As a user, I only want to see the board when I'm logged into the game.'
+	'As a logged in user, I want to see my total wins count.'
 
 
 
