@@ -16,9 +16,9 @@ My user stories from the beginning were as follows:
 	'As a logged in user, I want to be able to choose a new game whenever I please.'; 
 	'As a logged in user, I want to be able to sign out and have my email and password cleared.'; 
 	'As a logged in user, I want to undo a move.'; 
-	'As a logger in user, I want to be able to see when a winner is declared.'; 
+	'As a logged in user, I want to be able to see when a winner is declared.'; 
 	'As a user, I only want to see the board when I'm logged into the game.'; 
-	'As a user, I want to see my total wins count.'; 
+	'As a logged in user, I want to see my total wins count.'; 
 
 
 
