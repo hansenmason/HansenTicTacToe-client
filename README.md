@@ -1,7 +1,5 @@
 I used the following technologies:
-html, css, javascript
-jquery
-ajax
+html, css, javascript, jquery, ajax
 
 Planning and Development Process:
 I planned to do the signin/up/out and password features first, and then work on the board and all of it's logic, and then work on api requests. Initially I had followed suit, such that I had done the user signin features, and then moved onto the board. I then took aim at the logic. Upon completion of the logic, or basic layout of the logic, I moved on at random, departing from my plan, to the new game button, to user css/html, back to the board to add features such as winner and resetting etc. When stuck on a problem, I used repl.it to work out logic solutions and then implement them into the game, for example to decide the winner, looping through an object containing multiple arrays, and finally comparing it to the current board. From there, I moved on to api which gave me great difficulty understanding the concept, storing the data, and where the data is stored. What also helped me with the execution process and how to find what I was looking for and where to find it was through collaboration with some of my peers. I also used google to help understand the process of api requests. Once I had the api where I wanted it to be, for the most part, I did not have too many issues I couldn't overcome other than the end where I would have it say "draw" if a player won on the last square. I used debugger to understand what was happening in my for loop, and thus used break to break out of it, as I didn't realize it was not doing, but rather would enter the if statement, exit out of it once finished, and then continue looping (which I did not want). 
