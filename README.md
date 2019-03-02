@@ -1,126 +1,39 @@
-[![General Assembly Logo](https://camo.githubusercontent.com/1a91b05b8f4d44b5bbfb83abac2b0996d8e26c92/687474703a2f2f692e696d6775722e636f6d2f6b6538555354712e706e67)](https://generalassemb.ly/education/web-development-immersive)
-
-# browser-template
-
-A template for starting front-end projects. Webpack for `require` system, build
-pipeline, and development server. Boostrap and Handlebars.js included. No
-front-end frameworks included.
-
-## Installation
-
-1. [Download](../../archive/master.zip) this template.
-    - **Do Not Fork And Clone**
-    - Click the "Clone or Download" button and select "Download Zip".
-1. Move to the `wdi/projects` directory, then unzip the template directory with
-    `unzip /Users/<user-name>/Downloads/browser-template-master.zip`.
-1. Rename the template directory from `browser-template-master` to
-    `<project-name>-client`.
-1. Empty [`README.md`](README.md) and fill with your own content.
-1. Replace all instances of `HansenTicTacToe` with the name of
-    your project.
-    - You can search for all instances of text in Atom by pressing
-    `commant + shift + f` on Mac or `ctrl + shift + f` on WSL.
-1. Move into the new project and `git init`.
-1. Add all of the files in your project with the command `git add --all`.
-      - **Note: This is the only time you should run this command!**
-1. Commit all of your files with the command `git commit`.
-      - Your commit title should read `Initial commit`.
-1. Install dependencies with `npm install`.
-1. Create a new repository on [github.com](https://github.com),
-    _not GitHub Enterprise_.
-1. Name the new repository with the same name used on Step 3.
-1. Follow the instructions on your new repository's setup page. For details on
-   how to push to Github, refer to the section on Github entitled "…or push an existing
-   repository from the command line." Further documentation can be found [here](https://help.github.com/articles/adding-an-existing-project-to-github-using-the-command-line/).
-
-## Structure
-
-### Scripts
-
-Developers should store JavaScript files in [`assets/scripts`](assets/scripts).
-The "manifest" or entry-point is
-[`assets/scripts/app.js`](assets/scripts/app.js). In general, only
-application initialization goes in this file. It's normal for developers to
-start putting all code in this file, but encourage them to break out different
-responsibilities and use the `require` syntax put references where they're
-needed.
-
-### Config
-
-Developers should set `apiUrls.production` and `apiUrls.development` in
-[`assets/scripts/config.js`](assets/scripts/config.js).  With
-`apiUrls` set, developers may rely on `apiUrl` as the base for API
-URLs.
-
-### Styles
-
-Developers should store styles in [`assets/styles`](assets/styles) and load them
-from [`assets/styles/index.scss`](assets/styles/index.scss). Bootstrap version 3 is
-included in this template.
-
-### Forms and Using `getFormFields`
-
-Developers should use [getFormFields](get-form-fields.md) to retrieve form data
-to send to an API.
-
-### Deployment
-
-To deploy a browser-template based SPA, run `grunt deploy`.
-
-## Adding Images
-
-To add images to your project, you must store them in the `public` directory.
-To use the image in HTML or CSS, write the path to the image like this:
-
-```html
-<img src="public/cat.jpg">
-```
-or
-```css
-#my-cool-div {
-  background-image: url('public/cat.jpg')
-}
-```
-
-Note that there's no `./` or `/` in front of `public/filename.jpg`.
-
-## Adding Fonts
-
-To add custom fonts to your app, you can either use a CDN like Google Fonts, or
-you can download the fonts and save them in the `public` directory. If you use
-the former method, follow the directions on the website providing the fonts.
-
-For local fonts, put the files in `public`, and then import and use them in a
-`.scss` file like this:
-
-```scss
-@font-face {
-  font-family: 'Nature Beauty';
-  src: url('public/Nature-Beauty.ttf') format('truetype');
-}
-
-.element-with-custom-font {
-  font-family: 'Nature Beauty';
-}
-```
-
-## Tasks
-
-Developers should run these often!
-
-- `grunt nag` or just `grunt`: runs code quality analysis tools on your code
-    and complains
-- `grunt make-standard`: reformats all your code in the JavaScript Standard Style
-- `grunt <server|serve|s>`: generates bundles, watches, and livereloads
-- `grunt build`: place bundled styles and scripts where `index.html` can find
-    them
-- `grunt deploy`: builds and deploys master branch
+I used the following technologies:
+html, css, javascript
+jquery
+ajax
 
 
-## Additional Resources
+I planned to do the signin/up/out and password features first, and then work on the board and all of it's logic, and then work on api requests.
+Initially I had followed suit, such that I had done the user signin features, and then moved onto the board. I then took aim at the logic.
+Upon completion of the logic, or basic layout of the logic, I moved on at random, departing from my plan, to the new game button, to 
+user css/html, back to the board to add features such as winner and resetting etc. When stuck on a problem, I used repl.it to work out
+logic solutions and then implement them into the game, for example to decide the winner, looping through an object containing multiple arrays,
+and finally comparing it to the current board. From there, I moved on to api which gave me great difficulty understanding the concept,
+storing the data, and where the data is stored. My neighbor Lucas helped me with the execution process, and how to find the code. I also
+used google to help understand the process of api requests. Once I had the api where I wanted it to be, for the most part, I did not have 
+too many issues I couldn't overcome other than the end where I would have it say "draw" if a player won on the last square. I used debugger
+to understand what was happening in my for loop, and thus used break to break out of it, as I didn't realize it was not doing. Then, the last 
+feature of adding the total wins by a user became a very weird and intricate problem. I had the logic part of it, but the interface
+would change the update request after the game had completed. I used the console and the network features to look for the problem. The 
+site keeps sending option pre-requests that updates the gameboard to something different, but only happens sometimes. Very difficult to overcome.
+This would be the main unsolved problem for future iterations. I have problem solved through it, but can't find anyway to shut off the options
+pre requests without potentially doing some serious damage, or out of bounds things to my code. Hopefully this can be fixed in the future.
 
-- [Modern Javascript Explained for Dinosaurs](https://medium.com/@peterxjang/modern-javascript-explained-for-dinosaurs-f695e9747b70)
-- [Making Sense of Front End Build Tools](https://medium.freecodecamp.org/making-sense-of-front-end-build-tools-3a1b3a87043b)
+
+My user stories from the beginning were as follows: 
+
+'As a first time user, I want to be able to have my own unique log in'
+'As a logged in user, I want to choose if I'm X or O.'
+'As a logged in user, I want to be able to choose a new game whenever I please.'
+'As a logged in user, I want to be able to sign out and have my email and password cleared.'
+'As a logged in user, I want to undo a move.'
+'As a logger in user, I want to be able to see when a winner is declared.'
+'As a user, I only want to see the board when I'm logged into the game.'
+'As a user, I want to see my total wins count.'
+
+I was unable to complete the undo a move, as was explained that it might be too difficult for now, but something I could come back to in the
+future, as well as choosing if I'm X or O.
 
 ## [License](LICENSE)
 
